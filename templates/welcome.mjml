@@ -1,0 +1,60 @@
+<mjml>
+  <mj-head>
+    <mj-title>Welcome to {{ appName }}</mj-title>
+    <mj-preview>You're successfully registered</mj-preview>
+
+    <mj-style inline="inline">
+      .button {
+        background-color: #2563eb;
+        color: #ffffff;
+        border-radius: 6px;
+      }
+    </mj-style>
+  </mj-head>
+
+  <mj-body background-color="#f4f6f8">
+    <!-- Header -->
+    <mj-section background-color="#ffffff" padding="20px">
+      <mj-column>
+        <mj-text font-size="22px" font-weight="bold" align="center">
+          {{ appName }}
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Main Content -->
+    <mj-section background-color="#ffffff" padding="20px">
+      <mj-column>
+        <mj-text font-size="18px"> Hello {{ name }} 👋 </mj-text>
+
+        <mj-text font-size="15px" color="#555555">
+          Welcome to <strong>{{ appName }}</strong
+          >. We're excited to have you onboard.
+        </mj-text>
+
+        <mj-button
+          href="{{actionUrl}}"
+          background-color="#2563eb"
+          color="#ffffff"
+          border-radius="6px"
+          padding="12px 20px"
+        >
+          Get Started
+        </mj-button>
+
+        <mj-text font-size="13px" color="#999999">
+          If you did not create this account, please ignore this email.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Footer -->
+    <mj-section background-color="#f4f6f8" padding="20px">
+      <mj-column>
+        <mj-text font-size="12px" align="center" color="#aaaaaa">
+          © {{ year }} {{ appName }}. All rights reserved.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
