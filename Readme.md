@@ -16,7 +16,7 @@ This module provides a structured understanding of **Artificial Intelligence int
 * Building a chatbot
 * Git and GitHub fundamentals
 * Virtual Private Cloud (VPC) hosting concepts
-* AWS EC2 setup and deployment (https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html)
+* AWS EC2 setup and deployment (<https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html>)
 * Basic Linux commands for EC2 environments
 
 ---
@@ -211,7 +211,7 @@ Benefits:
 
 ![Image](https://www.linux.com/images/stories/41373/awscli-example.png)
 
-### Steps:
+### Steps
 
 1. Launch EC2 instance
 2. Choose Linux AMI
@@ -329,3 +329,22 @@ If you want, I can now:
 * Structure it as a **training syllabus**
 * Create **interview-ready Q&A**
 * Or build a **complete AI + Java deployment architecture diagram**
+
+```javascript# Download and install nvm:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+
+# in lieu of restarting the shell
+\. "$HOME/.nvm/nvm.sh"
+
+# Download and install Node.js:
+nvm install 24
+
+# source ~/.bashrc
+
+# Verify the Node.js version:
+node -v # Should print "v24.14.0".
+
+# Verify npm version:
+npm -v # Should print "11.9.0".
+
+```
