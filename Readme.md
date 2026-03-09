@@ -16,7 +16,7 @@ This module provides a structured understanding of **Artificial Intelligence int
 * Building a chatbot
 * Git and GitHub fundamentals
 * Virtual Private Cloud (VPC) hosting concepts
-* AWS EC2 setup and deployment
+* AWS EC2 setup and deployment (https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html)
 * Basic Linux commands for EC2 environments
 
 ---
