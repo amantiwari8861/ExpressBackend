@@ -1,60 +1,38 @@
-name: Deploy to EC2
+name: Deploy Express App
 
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:
+      - master
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
-          cache: "npm"
+          node-version: 20
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Run tests
-        run: npm test
-        continue-on-error: true # Since no tests are defined
+      - name: Build app
+        run: npm run build 
 
-      - name: Deploy to EC2
-        uses: appleboy/ssh-action@v1.0.3
+      - name: Deploy to Server
+        uses: appleboy/ssh-action@v1
         with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_SSH_KEY }}
-          port: ${{ secrets.EC2_PORT || 22 }}
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            # Navigate to your app directory on EC2
-            cd /home/ubuntu/express_backend  # Change this to your actual path
-
-            # Pull latest changes
-            git pull origin main
-
-            # Install dependencies
-            npm ci --production
-
-            # Install PM2 globally if not already installed
-            if ! command -v pm2 &> /dev/null; then
-              npm install -g pm2
-            fi
-
-            # Start or restart the app with PM2
-            pm2 stop express_backend || true  # Stop if running
-            pm2 delete express_backend || true  # Delete if exists
-            pm2 start src/index.js --name express_backend
-            pm2 save
-
-            # Optional: Configure PM2 to start on boot
-            pm2 startup
-            pm2 save
+            cd /home/ubuntu/express-backend
+            git pull origin master
+            npm install
+            pm2 restart app
