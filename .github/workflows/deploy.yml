@@ -32,7 +32,8 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            cd /home/ubuntu/express-backend
+            cd /home/ubuntu/ExpressBackend
             git pull origin master
             npm install
+            npm i -g pm2
             pm2 restart app
