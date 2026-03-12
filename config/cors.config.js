@@ -1,9 +1,10 @@
 const allowedOrigins = [
   "http://localhost:5000",
   "https://iamandroid.in",
+  "https://www.iamandroid.in",
   "http://iamandroid.in",
   "https://api.iamandroid.in",
-  "https://www.api.iamandroid.in",
+  "https://api.iamandroid.in",
   "http://api.iamandroid.in",
   "http://localhost:5173", // dev only
   "http://localhost:3000", // dev only
